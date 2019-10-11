@@ -11,8 +11,8 @@ TEST(Matrix, Rows_and_columns) {
         return;
     }
 
-    EXPECT_EQ(matrix->rows, rows) << "Wrong amount of rows";
-    EXPECT_EQ(matrix->cols, cols) << "Wrong amount of columns";
+    EXPECT_EQ(matrix->rows, rows);
+    EXPECT_EQ(matrix->cols, cols);
 
     free_matrix(matrix);
 }

@@ -2,7 +2,7 @@
 
 int count_entries(NumCount *entries, size_t filled, int elem) {
     int j = 0;
-    while(entries[j].num != elem && j < filled) {
+    while (entries[j].num != elem && j < filled) {
         j++;
     }
 

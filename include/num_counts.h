@@ -1,5 +1,5 @@
-#ifndef TECHNOPARK_C_HW1_NUM_COUNTS_H
-#define TECHNOPARK_C_HW1_NUM_COUNTS_H
+#ifndef INCLUDE_NUM_COUNTS_H_
+#define INCLUDE_NUM_COUNTS_H_
 
 #include <stdio.h>
 
@@ -11,4 +11,4 @@ typedef struct NumCount NumCount;
 
 int count_entries(NumCount *entries, size_t filled, int elem);
 
-#endif  // TECHNOPARK_C_HW1_NUM_COUNTS_H
+#endif  // INCLUDE_NUM_COUNTS_H_

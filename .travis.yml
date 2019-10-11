@@ -1,0 +1,21 @@
+dist: trusty
+
+language: cpp
+
+os:
+  - linux
+
+compiler:
+  - gcc
+
+install:
+  - sudo apt update
+  - sudo apt install cmake
+  - sudo apt install cppcheck
+  - sudo apt install valgrind
+
+script:
+  - cmake CMakeLists.txt
+  - make
+  - cppcheck -icmake-build-debug --inconclusive --enable=all .
+#  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med  --track-origins=yes --vgdb=no cmake-build-debug/main

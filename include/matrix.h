@@ -1,5 +1,5 @@
-#ifndef TECHNOPARK_C_HW1_MATRIX_H
-#define TECHNOPARK_C_HW1_MATRIX_H
+#ifndef INCLUDE_MATRIX_H_
+#define INCLUDE_MATRIX_H_
 
 #include <stdio.h>
 
@@ -12,4 +12,4 @@ void free_matrix(Matrix *matrix);
 int print_matrix(const Matrix *matrix);
 Matrix *multiply_elements(const Matrix *matrix);
 
-#endif  // TECHNOPARK_C_HW1_MATRIX_H
+#endif  // INCLUDE_MATRIX_H_

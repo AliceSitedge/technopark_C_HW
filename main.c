@@ -1,61 +1,20 @@
 #include <stdio.h>
 #include <malloc.h>
-
-struct Pair {
-    int x;
-    int y;
-};
-
-typedef struct Pair Pair;
-
-int *multiply_elements(const int *matrix, size_t rows, size_t cols) {
-    if (matrix == NULL || rows == 0 || cols == 0) {
-        return NULL;
-    }
-
-    int *new_matrix = calloc(rows * cols, sizeof(int));
-    if (new_matrix == NULL) {
-        return NULL;
-    }
-
-    Pair *entries = calloc(rows * cols, sizeof(Pair));
-    if (entries == NULL) {
-        free(new_matrix);
-        return NULL;
-    }
-
-    int n = 0;
-    for (size_t i = 0; i < rows * cols; i++) {
-        int j = 0;
-        while(entries[j].x != matrix[i] && j != n) {
-            j++;
-        }
-        if (j == n) {
-            entries[j].x = matrix[i];
-            n++;
-        }
-        new_matrix[i] = entries[j].y;
-        entries[j].y++;
-    }
-
-    return new_matrix;
-}
+#include <assert.h>
+#include "matrix.h"
 
 int main() {
-    size_t rows = 0, cols = 0;
-    scanf("%zu%zu", &rows, &cols);
-    int *matrix = calloc(rows * cols, sizeof(int));
-    for (size_t i = 0; i < rows * cols; i++) {
-        scanf("%d", &matrix[i]);
-    }
-    int *new_matrix = multiply_elements(matrix, (size_t)rows, (size_t)cols);
+    int rows = 0, cols = 0;
+    scanf("%d%d", &rows, &cols);
+    assert(rows > 0 && cols > 0);
 
-    for (size_t i = 0; i < rows; i++) {
-        for (size_t j = 0; j < cols; j++) {
-            printf("%d ", new_matrix[i * cols + j]);
-        }
-        puts("");
-    }
+    Matrix *matrix = create_matrix((size_t)rows, (size_t)cols);
+    fill_matrix(matrix);
 
+    Matrix *new_matrix = multiply_elements(matrix);
+    print_matrix(new_matrix);
+
+    free_matrix(matrix);
+    free_matrix(new_matrix);
     return 0;
 }

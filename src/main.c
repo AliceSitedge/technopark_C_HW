@@ -15,7 +15,6 @@ int main() {
     print_matrix(new_matrix);
 
     free_matrix(matrix);
-    free_matrix(new_matrix);
-    int a;
+    free_matrix(new_matrix)
     return 0;
 }

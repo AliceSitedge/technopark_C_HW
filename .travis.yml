@@ -13,7 +13,7 @@ install:
   - sudo apt install cmake
   - sudo apt install libgtest-dev
   - cd /usr/src/gtest
-  - sudo cmake CMakeLists.xt
+  - sudo cmake CMakeLists.txt
   - sudo make
   - cp *.a /usr/lib
   - sudo apt install cppcheck
@@ -24,3 +24,6 @@ script:
   - make
   - cppcheck -icmake-build-debug --inconclusive --enable=all .
 #  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med  --track-origins=yes --vgdb=no cmake-build-debug/main
+
+notifications:
+  email: false

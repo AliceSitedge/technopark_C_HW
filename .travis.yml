@@ -16,6 +16,8 @@ install:
   - sudo cmake CMakeLists.txt
   - sudo make
   - sudo cp *.a /usr/lib
+  - cd -
+  - ls
   - sudo apt install cppcheck
   - sudo apt install valgrind
 

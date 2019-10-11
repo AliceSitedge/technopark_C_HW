@@ -24,8 +24,8 @@ script:
   - sudo cmake CMakeLists.txt
   - sudo make
   - ls
-  - cppcheck -icmake-build-debug -iCMakeFiles --inconclusive --enable=all .
-  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med  --track-origins=yes --vgdb=no cmake-build-debug/main
+  - cppcheck -iCMakeFiles --inconclusive --enable=all .
+  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med  --track-origins=yes --vgdb=no main
   - 2 2
   - 1 1
   - 1 1

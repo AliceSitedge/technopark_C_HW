@@ -23,7 +23,6 @@ install:
 script:
   - sudo cmake CMakeLists.txt
   - sudo make
-  - ls
   - cppcheck -iCMakeFiles --inconclusive --enable=all .
   - valgrind --tool=memcheck --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no --error-exitcode=1 ./gtests
 

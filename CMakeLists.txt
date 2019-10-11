@@ -3,4 +3,6 @@ project(technopark_C_HW1)
 
 set(CMAKE_C_STANDARD 11)
 
-add_executable(main main.c matrix.c matrix.h num_counts.c num_counts.h)
+include_directories(include)
+
+add_executable(main src/main.c src/matrix.c src/num_counts.c)

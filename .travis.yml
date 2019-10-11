@@ -23,7 +23,8 @@ install:
 
 script:
   - sudo cmake CMakeLists.txt
-  - make
+  - sudo make
+  - ls
   - cppcheck -icmake-build-debug --inconclusive --enable=all .
 #  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med  --track-origins=yes --vgdb=no cmake-build-debug/main
 

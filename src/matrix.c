@@ -3,12 +3,6 @@
 #include "matrix.h"
 #include "num_counts.h"
 
-struct Matrix {
-    int *data;
-    size_t rows;
-    size_t cols;
-};
-
 Matrix *create_matrix(size_t rows, size_t cols) {
     Matrix *matrix = calloc(1, sizeof(Matrix));
     if (matrix == NULL) {

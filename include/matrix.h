@@ -3,7 +3,11 @@
 
 #include <stdio.h>
 
-struct Matrix;
+struct Matrix {
+    int *data;
+    size_t rows;
+    size_t cols;
+};
 typedef struct Matrix Matrix;
 
 Matrix *create_matrix(size_t rows, size_t cols);

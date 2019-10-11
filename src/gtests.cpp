@@ -34,7 +34,7 @@ TEST(Multiply, Different_values) {
         EXPECT_EQ(new_matrix->data[i], 0);
     }
 
-    free_matrix(matrix);
+    //free_matrix(matrix);
     free_matrix(new_matrix);
 }
 

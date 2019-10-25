@@ -29,6 +29,8 @@ TEST(Sort, Test1) {
         EXPECT_EQ(arr[i], temp);
     }
 
+    fin.close();
+    fout.close();
     delete[] arr;
 }
 
@@ -49,6 +51,8 @@ TEST(Sort, Test2) {
         EXPECT_EQ(arr[i], temp);
     }
 
+    fin.close();
+    fout.close();
     delete[] arr;
 }
 
@@ -69,6 +73,8 @@ TEST(Sort, Test3) {
         EXPECT_EQ(arr[i], temp);
     }
 
+    fin.close();
+    fout.close();
     delete[] arr;
 }
 
@@ -89,6 +95,8 @@ TEST(Sort, Test4) {
         EXPECT_EQ(arr[i], temp);
     }
 
+    fin.close();
+    fout.close();
     delete[] arr;
 }
 
@@ -109,6 +117,8 @@ TEST(Sort, Test5) {
         EXPECT_EQ(arr[i], temp);
     }
 
+    fin.close();
+    fout.close();
     delete[] arr;
 }
 

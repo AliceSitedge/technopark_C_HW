@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <memory.h>
 #include <malloc.h>
 #include <pthread.h>
@@ -11,7 +12,6 @@ typedef struct Merge_args {
     int second_len;
     int *dest;
 } Merge_args;
-
 
 typedef struct Merge_sort_args {
     int *arr;
@@ -56,6 +56,7 @@ void *thread_merge_sort(void *args) {
     int errflag = pthread_create(&thread, NULL, thread_merge_sort, spawn_args);
     if (errflag != 0) {
         free(spawn_args);
+        printf("%s", "FAIL");
         return NULL;
     }
     free(spawn_args);

@@ -1,85 +1,115 @@
 #include "gtest/gtest.h"
+#include <fstream>
 
 extern "C" {
-#include "matrix.h"
+#include "static_sort.h"
+#include "static_sort.h"
 }
 
-TEST(Matrix, Rows_and_columns) {
-    size_t rows = 2, cols = 2;
-    Matrix *matrix = create_matrix(rows, cols);
-    if (matrix == NULL) {
-        return;
+#define MAX_SIZE 100000
+
+TEST(Sort, Test1) {
+    std::ifstream fin("../tests/input/test1.txt");
+
+    int *arr = new int[MAX_SIZE];
+    for (int i = 0; i < MAX_SIZE; i++) {
+        fin >> arr[i];
     }
 
-    EXPECT_EQ(matrix->rows, rows);
-    EXPECT_EQ(matrix->cols, cols);
+    clock_t begin = 0, end = 0;
+    begin = clock();
+    static_merge_sort(arr, MAX_SIZE);
+    end = clock();
+    std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    free_matrix(matrix);
+    std::ifstream fout("../tests/output/test1.txt");
+    for (int i = 0; i < MAX_SIZE; i++) {
+        int temp = 0;
+        fout >> temp;
+        EXPECT_EQ(arr[i], temp);
+    }
+
+    delete[] arr;
 }
 
-TEST(Multiply, Different_values) {
-    size_t rows = 2, cols = 2;
-    Matrix *matrix = create_matrix(rows, cols);
-    if (matrix == NULL) {
-        return;
+TEST(Sort, Test2) {
+    std::ifstream fin("../tests/input/test2.txt");
+
+    int *arr = new int[MAX_SIZE];
+    for (int i = 0; i < MAX_SIZE; i++) {
+        fin >> arr[i];
     }
 
-    for (size_t i = 0; i < rows * cols; i++) {
-        matrix->data[i] = int(i);
+    static_merge_sort(arr, MAX_SIZE);
+
+    std::ifstream fout("../tests/output/test2.txt");
+    for (int i = 0; i < MAX_SIZE; i++) {
+        int temp = 0;
+        fout >> temp;
+        EXPECT_EQ(arr[i], temp);
     }
 
-    Matrix *new_matrix = multiply_elements(matrix);
-
-    for (size_t i = 0; i < rows * cols; i++) {
-        EXPECT_EQ(new_matrix->data[i], 0);
-    }
-
-    free_matrix(matrix);
-    free_matrix(new_matrix);
+    delete[] arr;
 }
 
-TEST(Multiply, Equal_values) {
-    size_t rows = 2, cols = 2;
-    Matrix *matrix = create_matrix(rows, cols);
-    if (matrix == NULL) {
-        return;
+TEST(Sort, Test3) {
+    std::ifstream fin("../tests/input/test3.txt");
+
+    int *arr = new int[MAX_SIZE];
+    for (int i = 0; i < MAX_SIZE; i++) {
+        fin >> arr[i];
     }
 
-    for (size_t i = 0; i < rows * cols; i++) {
-        matrix->data[i] = int(1);
+    static_merge_sort(arr, MAX_SIZE);
+
+    std::ifstream fout("../tests/output/test3.txt");
+    for (int i = 0; i < MAX_SIZE; i++) {
+        int temp = 0;
+        fout >> temp;
+        EXPECT_EQ(arr[i], temp);
     }
 
-    Matrix *new_matrix = multiply_elements(matrix);
-
-    for (size_t i = 0; i < rows * cols; i++) {
-        EXPECT_EQ(new_matrix->data[i], i);
-    }
-
-    free_matrix(matrix);
-    free_matrix(new_matrix);
+    delete[] arr;
 }
 
-TEST(Multiply, Random_values) {
-    size_t rows = 2, cols = 2;
-    Matrix *matrix = create_matrix(rows, cols);
-    if (matrix == NULL) {
-        return;
+TEST(Sort, Test4) {
+    std::ifstream fin("../tests/input/test4.txt");
+
+    int *arr = new int[MAX_SIZE];
+    for (int i = 0; i < MAX_SIZE; i++) {
+        fin >> arr[i];
     }
 
-    matrix->data[0] = 1;
-    matrix->data[1] = 2;
-    matrix->data[2] = 2;
-    matrix->data[3] = 1;
+    static_merge_sort(arr, MAX_SIZE);
 
-    Matrix *new_matrix = multiply_elements(matrix);
+    std::ifstream fout("../tests/output/test4.txt");
+    for (int i = 0; i < MAX_SIZE; i++) {
+        int temp = 0;
+        fout >> temp;
+        EXPECT_EQ(arr[i], temp);
+    }
 
-    EXPECT_EQ(new_matrix->data[0], 0);
-    EXPECT_EQ(new_matrix->data[1], 0);
-    EXPECT_EQ(new_matrix->data[2], 2);
-    EXPECT_EQ(new_matrix->data[3], 1);
+    delete[] arr;
+}
 
-    free_matrix(matrix);
-    free_matrix(new_matrix);
+TEST(Sort, Test5) {
+    std::ifstream fin("../tests/input/test5.txt");
+
+    int *arr = new int[MAX_SIZE];
+    for (int i = 0; i < MAX_SIZE; i++) {
+        fin >> arr[i];
+    }
+
+    static_merge_sort(arr, MAX_SIZE);
+
+    std::ifstream fout("../tests/output/test5.txt");
+    for (int i = 0; i < MAX_SIZE; i++) {
+        int temp = 0;
+        fout >> temp;
+        EXPECT_EQ(arr[i], temp);
+    }
+
+    delete[] arr;
 }
 
 int main(int argc, char **argv) {

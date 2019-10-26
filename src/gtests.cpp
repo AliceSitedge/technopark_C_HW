@@ -10,7 +10,7 @@ extern "C" {
 #define MAX_SIZE 100000
 
 TEST(Sort, Test1) {
-    std::ifstream fin("../tests/input/test1.txt");
+    std::ifstream fin("./tests/input/test1.txt");
     if (!fin.is_open()) {
         FAIL() << "Couldn't open input file";
     }
@@ -46,7 +46,7 @@ TEST(Sort, Test1) {
 
     std::cout << "Shared merge sort: " << end - begin << " sec\n";
 
-    std::ifstream fout("../tests/output/test1.txt");
+    std::ifstream fout("./tests/output/test1.txt");
     if (!fout.is_open()) {
         FAIL() << "Couldn't open output file";
     }
@@ -60,7 +60,7 @@ TEST(Sort, Test1) {
 }
 
 TEST(Sort, Test2) {
-    std::ifstream fin("../tests/input/test2.txt");
+    std::ifstream fin("./tests/input/test2.txt");
     if (!fin.is_open()) {
         FAIL() << "Couldn't open input file";
     }
@@ -96,7 +96,7 @@ TEST(Sort, Test2) {
 
     std::cout << "Shared merge sort: " << end - begin << " sec\n";
 
-    std::ifstream fout("../tests/output/test2.txt");
+    std::ifstream fout("./tests/output/test2.txt");
     if (!fout.is_open()) {
         FAIL() << "Couldn't open output file";
     }
@@ -110,7 +110,7 @@ TEST(Sort, Test2) {
 }
 
 TEST(Sort, Test3) {
-    std::ifstream fin("../tests/input/test3.txt");
+    std::ifstream fin("./tests/input/test3.txt");
     if (!fin.is_open()) {
         FAIL() << "Couldn't open input file";
     }
@@ -146,7 +146,7 @@ TEST(Sort, Test3) {
 
     std::cout << "Shared merge sort: " << end - begin << " sec\n";
 
-    std::ifstream fout("../tests/output/test3.txt");
+    std::ifstream fout("./tests/output/test3.txt");
     if (!fout.is_open()) {
         FAIL() << "Couldn't open output file";
     }
@@ -160,7 +160,7 @@ TEST(Sort, Test3) {
 }
 
 TEST(Sort, Test4) {
-    std::ifstream fin("../tests/input/test4.txt");
+    std::ifstream fin("./tests/input/test4.txt");
     if (!fin.is_open()) {
         FAIL() << "Couldn't open input file";
     }
@@ -196,7 +196,7 @@ TEST(Sort, Test4) {
 
     std::cout << "Shared merge sort: " << end - begin << " sec\n";
 
-    std::ifstream fout("../tests/output/test4.txt");
+    std::ifstream fout("./tests/output/test4.txt");
     if (!fout.is_open()) {
         FAIL() << "Couldn't open output file";
     }
@@ -210,7 +210,7 @@ TEST(Sort, Test4) {
 }
 
 TEST(Sort, Test5) {
-    std::ifstream fin("../tests/input/test5.txt");
+    std::ifstream fin("./tests/input/test5.txt");
     if (!fin.is_open()) {
         FAIL() << "Couldn't open input file";
     }
@@ -246,7 +246,7 @@ TEST(Sort, Test5) {
 
     std::cout << "Shared merge sort: " << end - begin << " sec\n";
 
-    std::ifstream fout("../tests/output/test5.txt");
+    std::ifstream fout("./tests/output/test5.txt");
     if (!fout.is_open()) {
         FAIL() << "Couldn't open output file";
     }

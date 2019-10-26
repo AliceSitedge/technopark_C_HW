@@ -10,11 +10,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(STATIC_SOURCE_FILES
         src/static_sort.c)
 
-set(SHARED_SOURCE_FILES
-        src/shared_sort.c)
+#set(SHARED_SOURCE_FILES
+#        src/shared_sort.c)
 
 add_library(static_sort STATIC ${STATIC_SOURCE_FILES})
-add_library(shared_sort SHARED ${SHARED_SOURCE_FILES})
+#add_library(shared_sort SHARED ${SHARED_SOURCE_FILES})
 
 include_directories(
         include
@@ -24,8 +24,7 @@ include_directories(
 add_executable(main src/main.c)
 add_executable(gtests src/gtests.cpp)
 
-target_link_libraries(main static_sort shared_sort)
-target_link_libraries(gtests static_sort shared_sort)
+target_link_libraries(main static_sort)
+target_link_libraries(gtests static_sort)
 
-target_link_libraries(main Threads::Threads)
 target_link_libraries(gtests ${GTEST_LIBRARIES} Threads::Threads)

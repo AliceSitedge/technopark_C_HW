@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
 //        printf("%d ", arr[i]);
     }
 
-    shared_merge_sort(arr, size);
+    static_merge_sort(arr, size);
 
     FILE *output = fopen(argv[2], "w");
     for (int i = 0; i < size; i++) {

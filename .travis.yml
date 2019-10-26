@@ -24,7 +24,7 @@ script:
   - sudo cmake CMakeLists.txt
   - sudo make
   - cppcheck -iCMakeFiles --inconclusive --enable=all .
-  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no --error-exitcode=1 --leak-check=full --show-leak-kinds=all ./gtests
+  - valgrind --tool=memcheck --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./gtests
 
 notifications:
   email: false

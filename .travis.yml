@@ -1,0 +1,30 @@
+Idist: trusty
+
+language: cpp
+
+os:
+  - linux
+
+compiler:
+  - gcc
+
+install:
+  - sudo apt update
+  - sudo apt install cmake
+  - sudo apt install libgtest-dev
+  - cd /usr/src/gtest
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - sudo cp *.a /usr/lib
+  - cd -
+  - sudo apt install cppcheck
+  - sudo apt install valgrind
+
+script:
+  - sudo cmake CMakeLists.txt
+  - sudo make
+  - cppcheck -iCMakeFiles --inconclusive --enable=all .
+  - ./gtests
+
+notifications:
+  email: false

@@ -24,7 +24,7 @@ script:
   - sudo cmake CMakeLists.txt
   - sudo make
   - cppcheck -iCMakeFiles --inconclusive --enable=all .
-  - valgrind --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no --max-threads=32000 ./gtests
+  - ./gtests
 
 notifications:
   email: false

@@ -9,7 +9,7 @@ extern "C" {
 #define MAX_SIZE 100000
 
 TEST(Sort, Test1) {
-    std::ifstream fin("../tests/input/test1.txt");
+    std::ifstream fin("./tests/input/test1.txt");
 
     if (!fin.is_open()) {
         FAIL() << "open error1";
@@ -27,7 +27,7 @@ TEST(Sort, Test1) {
     end = clock();
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    std::ifstream fout("../tests/output/test1.txt");
+    std::ifstream fout("./tests/output/test1.txt");
     if (!fout.is_open()) {
         FAIL() << "open error2";
     }
@@ -40,7 +40,7 @@ TEST(Sort, Test1) {
 }
 
 TEST(Sort, Test2) {
-    std::ifstream fin("../tests/input/test2.txt");
+    std::ifstream fin("./tests/input/test2.txt");
 
     int arr[MAX_SIZE];
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -53,7 +53,7 @@ TEST(Sort, Test2) {
     end = clock();
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    std::ifstream fout("../tests/output/test2.txt");
+    std::ifstream fout("./tests/output/test2.txt");
     for (int i = 0; i < MAX_SIZE; i++) {
         int temp = 0;
         fout >> temp;
@@ -62,7 +62,7 @@ TEST(Sort, Test2) {
 }
 
 TEST(Sort, Test3) {
-    std::ifstream fin("../tests/input/test3.txt");
+    std::ifstream fin("./tests/input/test3.txt");
 
     int arr[MAX_SIZE];
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -75,7 +75,7 @@ TEST(Sort, Test3) {
     end = clock();
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    std::ifstream fout("../tests/output/test3.txt");
+    std::ifstream fout("./tests/output/test3.txt");
     for (int i = 0; i < MAX_SIZE; i++) {
         int temp = 0;
         fout >> temp;
@@ -84,7 +84,7 @@ TEST(Sort, Test3) {
 }
 
 TEST(Sort, Test4) {
-    std::ifstream fin("../tests/input/test4.txt");
+    std::ifstream fin("./tests/input/test4.txt");
 
     int arr[MAX_SIZE];
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -97,7 +97,7 @@ TEST(Sort, Test4) {
     end = clock();
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    std::ifstream fout("../tests/output/test4.txt");
+    std::ifstream fout("./tests/output/test4.txt");
     for (int i = 0; i < MAX_SIZE; i++) {
         int temp = 0;
         fout >> temp;
@@ -106,7 +106,7 @@ TEST(Sort, Test4) {
 }
 
 TEST(Sort, Test5) {
-    std::ifstream fin("../tests/input/test5.txt");
+    std::ifstream fin("./tests/input/test5.txt");
 
     int arr[MAX_SIZE];
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -119,7 +119,7 @@ TEST(Sort, Test5) {
     end = clock();
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
-    std::ifstream fout("../tests/output/test5.txt");
+    std::ifstream fout("./tests/output/test5.txt");
     for (int i = 0; i < MAX_SIZE; i++) {
         int temp = 0;
         fout >> temp;

@@ -5,14 +5,6 @@
 
 #include "shared_sort.h"
 
-typedef struct Merge_args {
-    int *first;
-    int first_len;
-    int *second;
-    int second_len;
-    int *dest;
-} Merge_args;
-
 typedef struct Merge_sort_args {
     int *arr;
     int n;
@@ -54,15 +46,16 @@ void *thread_merge_sort(void *args) {
     spawn_args->arr = arr;
     spawn_args->n = first_len;
     int errflag = pthread_create(&thread, NULL, thread_merge_sort, spawn_args);
-    if (errflag != 0) {
-        free(spawn_args);
-        printf("%s", "FAIL");
-        return NULL;
-    }
-    free(spawn_args);
-    shared_merge_sort(arr + first_len, second_len);
-    pthread_join(thread, NULL);
 
+    if (errflag != 0) {
+        shared_merge_sort(arr, first_len);
+        shared_merge_sort(arr + first_len, second_len);
+    } else {
+        shared_merge_sort(arr + first_len, second_len);
+        pthread_join(thread, NULL);
+    }
+
+    free(spawn_args);
 
     int *temp = calloc((size_t)n, sizeof(int));
     merge(arr, first_len, arr + first_len, second_len, temp);

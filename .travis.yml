@@ -19,13 +19,11 @@ install:
   - cd -
   - sudo apt install cppcheck
   - sudo apt install valgrind
-  - sudo apt install tree
 
 script:
   - sudo cmake CMakeLists.txt
   - sudo make
   - cppcheck -iCMakeFiles --inconclusive --enable=all .
-  - tree
   - valgrind --tool=memcheck --leak-check=full --leak-resolution=med --track-origins=yes --vgdb=no ./gtests
 
 notifications:

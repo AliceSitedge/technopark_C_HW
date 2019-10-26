@@ -10,6 +10,9 @@ extern "C" {
 
 TEST(Sort, Test1) {
     std::ifstream fin("../tests/input/test1.txt");
+    if (!fin.is_open()) {
+        FAIL() << "open error1";
+    }
 
     int arr[MAX_SIZE];
     for (int i = 0; i < MAX_SIZE; i++) {
@@ -23,6 +26,9 @@ TEST(Sort, Test1) {
     std::cout << "Sorting time: " << float(end - begin) / CLOCKS_PER_SEC << std::endl;
 
     std::ifstream fout("../tests/output/test1.txt");
+    if (!fout.is_open()) {
+        FAIL() << "open error2";
+    }
     for (int i = 0; i < MAX_SIZE; i++) {
         int temp = 0;
         fout >> temp;
